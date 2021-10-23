@@ -53,7 +53,7 @@ function start(client) {
         }
       ];
 
-      await client.sendListMenu(message.from, 'Title', 'subTitle', 'Description', 'menu', list)
+      await client.sendListMenu(message.reply, 'Title', 'subTitle', 'Description', 'menu', list)
       .then((result) => {
         console.log('Result: ', result); //return object success
       })
@@ -172,67 +172,67 @@ function start(client) {
 
 
       // Send image file base64
-      await client.sendImageFromBase64('000000000000@c.us', base64Image, "name file")
-      .then((result) => {
-        console.log('Result: ', result); //return object success
-      })
-      .catch((erro) => {
-        console.error('Error when sending: ', erro); //return object error
-      });
+      // await client.sendImageFromBase64('000000000000@c.us', base64Image, "name file")
+      // .then((result) => {
+      //   console.log('Result: ', result); //return object success
+      // })
+      // .catch((erro) => {
+      //   console.error('Error when sending: ', erro); //return object error
+      // });
 
       // Send file (venom will take care of mime types, just need the path)
       // you can also upload an image using a valid HTTP protocol
-      await client
-      .sendFile(
-        '000000000000@c.us',
-        'path/to/file.pdf',
-        'file_name',
-        'See my file in pdf'
-      )
-      .then((result) => {
-        console.log('Result: ', result); //return object success
-      })
-      .catch((erro) => {
-        console.error('Error when sending: ', erro); //return object error
-      });
+      // await client
+      // .sendFile(
+      //   '000000000000@c.us',
+      //   'path/to/file.pdf',
+      //   'file_name',
+      //   'See my file in pdf'
+      // )
+      // .then((result) => {
+      //   console.log('Result: ', result); //return object success
+      // })
+      // .catch((erro) => {
+      //   console.error('Error when sending: ', erro); //return object error
+      // });
 
       // Sends file
       // base64 parameter should have mime type already defined
-      await client
-      .sendFileFromBase64(
-        '000000000000@c.us',
-        base64PDF,
-        'file_name.pdf',
-        'See my file in pdf'
-      )
-      .then((result) => {
-        console.log('Result: ', result); //return object success
-      })
-      .catch((erro) => {
-        console.error('Error when sending: ', erro); //return object error
-      });
+      // await client
+      // .sendFileFromBase64(
+      //   '000000000000@c.us',
+      //   base64PDF,
+      //   'file_name.pdf',
+      //   'See my file in pdf'
+      // )
+      // .then((result) => {
+      //   console.log('Result: ', result); //return object success
+      // })
+      // .catch((erro) => {
+      //   console.error('Error when sending: ', erro); //return object error
+      // });
 
       // Generates sticker from the provided animated gif image and sends it (Send image as animated sticker)
       // image path imageBase64 A valid gif and webp image is required. You can also send via http/https (http://www.website.com/img.gif)
-      await client
-      .sendImageAsStickerGif('000000000000@c.us', './image.gif')
-      .then((result) => {
-        console.log('Result: ', result); //return object success
-      })
-      .catch((erro) => {
-        console.error('Error when sending: ', erro); //return object error
-      });
+      // await client
+      // .sendImageAsStickerGif('000000000000@c.us', './image.gif')
+      // .then((result) => {
+      //   console.log('Result: ', result); //return object success
+      // })
+      // .catch((erro) => {
+      //   console.error('Error when sending: ', erro); //return object error
+      // });
 
       // Generates sticker from given image and sends it (Send Image As Sticker)
       // image path imageBase64 A valid png, jpg and webp image is required. You can also send via http/https (http://www.website.com/img.jpg)
-      await client
-      .sendImageAsSticker('000000000000@c.us', './image.jpg')
-      .then((result) => {
-        console.log('Result: ', result); //return object success
-      })
-      .catch((erro) => {
-        console.error('Error when sending: ', erro); //return object error
-      });
+      // await client
+      // .sendImageAsSticker('000000000000@c.us', './image.jpg')
+      // .then((result) => {
+      //   console.log('Result: ', result); //return object success
+      // })
+      // .catch((erro) => {
+      //   console.error('Error when sending: ', erro); //return object error
+      // });
 
       // Forwards messages
       await client.forwardMessages(
