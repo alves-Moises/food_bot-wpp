@@ -21,13 +21,14 @@ function start(client) {
           console.error('Error when sending: ', erro); //return object error
         });
     }
-
+  })
   
 
 
     client.onMessage( async (message) => {
       // Send List menu
       //This function does not work for Bussines contacts
+      message.reply('Testando assync')
       const list = [
         {
           title: "Pasta",
@@ -52,6 +53,9 @@ function start(client) {
           ]
         }
       ];
+
+      client
+      .sendText(message.from, 'Welcome Venom 🕷')
 
       await client.sendListMenu(message.reply, 'Title', 'subTitle', 'Description', 'menu', list)
       .then((result) => {
@@ -109,17 +113,17 @@ function start(client) {
       });
 
       // Send a list of contact cards
-      await client
-      .sendContactVcardList('000000000000@c.us', [
-        '111111111111@c.us',
-        '222222222222@c.us',
-      ])
-      .then((result) => {
-        console.log('Result: ', result); //return object success
-      })
-      .catch((erro) => {
-        console.error('Error when sending: ', erro); //return object error
-      });
+      // await client
+      // .sendContactVcardList('000000000000@c.us', [
+      //   '111111111111@c.us',
+      //   '222222222222@c.us',
+      // ])
+      // .then((result) => {
+      //   console.log('Result: ', result); //return object success
+      // })
+      // .catch((erro) => {
+      //   console.error('Error when sending: ', erro); //return object error
+      // });
 
       // Send basic text
       await client
@@ -296,18 +300,18 @@ function start(client) {
       checkReply = await client.returnReply(messagem);
 
       // Send seen ✔️✔️
-      await client.sendSeen('000000000000@c.us');
+      // await client.sendSeen('000000000000@c.us');
 
       // Start typing...
-      await client.startTyping('000000000000@c.us');
+      // await client.startTyping('000000000000@c.us');
 
       // Stop typing
-      await client.stopTyping('000000000000@c.us');
+      // await client.stopTyping('000000000000@c.us');
 
       // Set chat state (0: Typing, 1: Recording, 2: Paused)
-      await client.setChatState('000000000000@c.us', 0 | 1 | 2);
+      // await client.setChatState('000000000000@c.us', 0 | 1 | 2);
 
 
   });
-  });
+  
 }
